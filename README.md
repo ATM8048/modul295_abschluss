@@ -14,12 +14,15 @@
 5. Pakete installieren: npm install express
 6. Nodemon installieren mit npm install --save-dev nodemon
 7. Eslint konfigurieren mit npm init @eslint/config
-8. In Ordner src die Datei server.js und Grundgerüst erstellen.
+8. In Ordner src die Datei server.js und mit Grundgerüst erstellen.
+9. In Ordner src die Datei tasks.js und mit Grundgerüst erstellen.
+10. In Ordner src die Datei authentication.js und mit Grundgerüst erstellen.
 
 ## Ordnerstruktur:
 1. Quelcode in src
 2. die Datei server.js ist für Konfigurationen
-3. die Datei task.js ist alles über Tasks mit dem Login
+3. die Datei task.js ist alles über Tasks.
+4. die Datei authentication.js ist für Login-System.
 
 
 

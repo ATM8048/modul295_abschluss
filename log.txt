@@ -1,0 +1,11 @@
+commit 786099c55c7f04997ff1ee5eeea73b47a50864a5
+Author: Martin Atanasov <martin.atanasov@lernende.bbw.ch>
+Date:   Fri Dec 22 08:52:36 2023 +0000
+
+    Create the basic structure
+
+commit bf3350ea413b9453d4557dca0c5f6a10c886bd8c
+Author: ATM8048 <118833183+ATM8048@users.noreply.github.com>
+Date:   Fri Dec 22 08:40:54 2023 +0100
+
+    Initial commit
