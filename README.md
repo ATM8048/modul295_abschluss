@@ -22,6 +22,7 @@
 12. Endpoints in authentication.js schreiben.
 13. Try und Catch bei allen endpoints geschrieben.
 14. Endpoints weden überprüft, ob ein Bentuzer die Berechtigugen hat.
+15. unbekante Endpoint werden gehandelt.
 
 
 ## Ordnerstruktur:

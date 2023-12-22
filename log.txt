@@ -1,3 +1,33 @@
+commit 3749d3ffe11d10e83327c1911619b15ded3e0107
+Author: Martin Atanasov <martin.atanasov@lernende.bbw.ch>
+Date:   Fri Dec 22 13:08:36 2023 +0000
+
+    Problem with session fixed, wrong endpoint goes with error 404
+
+commit cab76add21aec29c24c02237b83288ffbdb5a071
+Author: Martin Atanasov <martin.atanasov@lernende.bbw.ch>
+Date:   Fri Dec 22 12:37:48 2023 +0000
+
+    Endpoints done with try and catch, prove the authentication
+
+commit b2e533a18a5bee301b233af4322e8765f24fae27
+Author: Martin Atanasov <martin.atanasov@lernende.bbw.ch>
+Date:   Fri Dec 22 10:46:18 2023 +0000
+
+    continue endpoints
+
+commit a1cb8409be5b1b0a62e1def6552bcfc2657b2a11
+Author: Martin Atanasov <martin.atanasov@lernende.bbw.ch>
+Date:   Fri Dec 22 10:07:30 2023 +0000
+
+    Testdaten created and some fixes
+
+commit 63062afe00f991e5dbe0d3835ac69168650a1620
+Author: Martin Atanasov <martin.atanasov@lernende.bbw.ch>
+Date:   Fri Dec 22 09:26:44 2023 +0000
+
+    define endpoints
+
 commit 786099c55c7f04997ff1ee5eeea73b47a50864a5
 Author: Martin Atanasov <martin.atanasov@lernende.bbw.ch>
 Date:   Fri Dec 22 08:52:36 2023 +0000

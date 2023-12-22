@@ -1,17 +1,16 @@
+/* eslint-disable indent */
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const tasks = require('./tasks');
 const authentication = require('./authentication');
 
-
-
 const app = express();
 app.use(session({
     secret: 'supersecret',
     resave: false,
     saveUninitialized: true,
-    cookie: {}
+    cookie: {},
 }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
