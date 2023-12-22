@@ -9,12 +9,16 @@ router.get('/', (request, response) => {
     try {
         if (request.session.authenticated) {
             response.json(tasks);
+            // Hier wird die Antwort bereits gesendet
+            // Versuche, danach keine weiteren Header zu setzen
+            response.status(200); // Dies würde den Fehler auslösen
         } else {
-            response.sendStatus(403).json("Keine Berechtigungen für das");
+            response.status(403).json("Keine Berechtigungen für das");
         }
     } catch (err) {
-        response.sendStatus(500).send(err);
-    };
+        response.status(500).json(err);
+    }
+
 });
 
 router.get('/:id', (request, response) => {
@@ -23,13 +27,13 @@ router.get('/:id', (request, response) => {
             if (tasks.find((task) => task.id === request.params.id)) {
                 response.send(tasks.find((task) => task.id === request.params.id))
             } else {
-                response.sendStatus(404);
+                response.status(404);
             }
         } else {
-            response.sendStatus(403).json("Keine Berechtigungen für das");
+            response.status(403).json("Keine Berechtigungen für das");
         }
     } catch (err) {
-        response.sendStatus(500).send(err);
+        response.status(500).json(err);
     }
 
 });
@@ -47,10 +51,10 @@ router.post('/', (request, response) => {
             tasks = [...tasks, newBook];
             response.status(201).send(newBook);
         } else {
-            response.sendStatus(403).json("Keine Berechtigungen für das");
+            response.status(403).json("Keine Berechtigungen für das");
         }
     } catch (err) {
-        response.sendStatus(500).send(err);
+        response.status(500).json(err);
     }
 
 });
@@ -64,10 +68,10 @@ router.patch('/:id', (request, response) => {
             tasks = tasks.map((task) => task.id === request.params.id ? oldTask : task);
             response.send(oldTask);
         } else {
-            response.sendStatus(403).json("Keine Berechtigungen für das");
+            response.status(403).json("Keine Berechtigungen für das");
         }
     } catch (err) {
-        response.sendStatus(500).send(err);
+        response.status(500).json(err);
     }
 
 });
@@ -80,13 +84,13 @@ router.delete('/:id', (request, response) => {
             if (taskIndex !== -1) {
                 tasks.splice(taskIndex, 1);
 
-                response.status(204).send();
+                response.status(204).json();
             }
         } else {
-            response.sendStatus(403).json("Keine Berechtigungen für das");
+            response.status(403).json("Keine Berechtigungen für das");
         }
     } catch (err) {
-        response.sendStatus(500).send(err);
+        response.status(500).json(err);
     }
 
 });
