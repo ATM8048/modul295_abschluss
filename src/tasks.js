@@ -1,23 +1,25 @@
 const express = require('express');
-
 const router = express.Router();
+const tasks = require('./testdaten');
 
-router.get('/tasks', function (response, request) {
+
+
+router.get('/', (request, response) => {
+    response.json(tasks);
+});
+
+router.get('/:id', (request, response) => {
 
 });
 
-router.get('/tasks/.id', function (response, request) {
+router.post('/', (request, response) => {
 
 });
 
-router.post('/tasks', function (response, request) {
+router.patch('/tasks/:id', (request, response) => {
 
 });
-
-router.patch('/tasks/:id', function (response, request) {
-
-});
-router.delete('/tasks/:id', function (response, request) {
+router.delete('/tasks/:id', (request, response) => {
 
 });
 

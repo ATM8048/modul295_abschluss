@@ -11,12 +11,13 @@
 2. Projekt klonen mit git clone
 3. Im Verzeichnis wechseln
 4. Ordner src erstellen
-5. Pakete installieren: npm install express
+5. Pakete installieren: npm install express body-parser
 6. Nodemon installieren mit npm install --save-dev nodemon
 7. Eslint konfigurieren mit npm init @eslint/config
 8. In Ordner src die Datei server.js und mit Grundgerüst erstellen.
 9. In Ordner src die Datei tasks.js und mit Grundgerüst erstellen.
 10. In Ordner src die Datei authentication.js und mit Grundgerüst erstellen.
+11. Testdaten mit Hilfe von Chatgpt generiert und in Datei testdaten.js gespeichert.
 
 ## Ordnerstruktur:
 1. Quelcode in src
