@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable indent */
 const express = require('express');
 
@@ -18,15 +19,15 @@ router.post('/login', (request, response) => {
                 request.session.authenticated = true;
                 request.session.email = email;
 
-                return response.status(201).send('Erfolgreich eingeloggt!');
+                return response.status(201).json('Erfolgreich eingeloggt!');
             }
             // Falls die Email kein "@"-Symbol enthält
-            return response.status(401).send('Ungültige Email-Adresse');
+            return response.status(401).json('Ungültige Email-Adresse');
         }
         // Falls eine Email oder ein Passwort fehlt
-        return response.status(401).send('Ungültige Anmeldeinformationen');
+        return response.status(401).json('Ungültige Anmeldeinformationen');
     } catch (err) {
-        response.sendStatus(500).send(err);
+        response.sendStatus(500).json(err);
     }
 });
 
@@ -40,7 +41,7 @@ router.get('/verify', (request, response) => {
         }
         return response.status(401).json('Unzureichende Berechtigungen');
     } catch (err) {
-        response.sendStatus(500).send(err);
+        response.sendStatus(500).json(err);
     }
 });
 
@@ -55,7 +56,6 @@ router.delete('/logout', (request, response) => {
             if (err) {
                 return response.status(500).send('Fehler beim Ausloggen');
             }
-            // Senden Sie den Statuscode 204 (No Content) zurück, da keine Antwortdaten vorhanden sind
             return response.status(204).end();
         });
     } catch (err) {

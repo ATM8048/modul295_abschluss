@@ -1,7 +1,7 @@
 {
-    "id": "9da443e1-5e4c-4064-85ab-1eae02210b51",
+    "id": "1ec21627-2a4f-4099-b9fd-58837d13f6f4",
     "name": "abschluss_projekt",
-    "timestamp": "2023-12-22T14:47:56.962Z",
+    "timestamp": "2023-12-22T15:27:54.227Z",
     "collection_id": "27450696-106b88f4-351e-46b8-b4ac-7733f01aad79",
     "folder_id": 0,
     "environment_id": "0",
@@ -9,14 +9,32 @@
     "delay": 0,
     "persist": true,
     "status": "finished",
-    "startedAt": "2023-12-22T14:47:56.050Z",
-    "totalFail": 1,
+    "startedAt": "2023-12-22T15:27:53.226Z",
+    "totalFail": 0,
     "results": [
+        {
+            "id": "441f9104-a0a9-4dc5-859d-814fc2b1ae1e",
+            "name": "wrong logout",
+            "url": "http://localhost:3000/logout",
+            "time": 219,
+            "responseCode": {
+                "code": 204,
+                "name": "No Content"
+            },
+            "tests": {},
+            "testPassFailCounts": {},
+            "times": [
+                219
+            ],
+            "allTests": [
+                {}
+            ]
+        },
         {
             "id": "920caafd-97cc-45e0-8cbb-cc7c25cc6c84",
             "name": "login",
             "url": "http://localhost:3000/login",
-            "time": 229,
+            "time": 15,
             "responseCode": {
                 "code": 201,
                 "name": "Created"
@@ -31,7 +49,7 @@
                 }
             },
             "times": [
-                229
+                15
             ],
             "allTests": [
                 {
@@ -43,7 +61,7 @@
             "id": "401ca956-90dc-48c2-9332-e1152836d406",
             "name": "get all tasks",
             "url": "http://localhost:3000/tasks",
-            "time": 8,
+            "time": 9,
             "responseCode": {
                 "code": 200,
                 "name": "OK"
@@ -58,7 +76,7 @@
                 }
             },
             "times": [
-                8
+                9
             ],
             "allTests": [
                 {
@@ -70,7 +88,7 @@
             "id": "0c53ac38-3f4d-404f-adc9-03119c089b48",
             "name": "get one task",
             "url": "http://localhost:3000/tasks/1",
-            "time": 8,
+            "time": 9,
             "responseCode": {
                 "code": 200,
                 "name": "OK"
@@ -85,7 +103,7 @@
                 }
             },
             "times": [
-                8
+                9
             ],
             "allTests": [
                 {
@@ -97,7 +115,7 @@
             "id": "b49db21b-761d-44a4-9b0d-c39750af9ce7",
             "name": "get one task wrong",
             "url": "http://localhost:3000/tasks/11",
-            "time": 6,
+            "time": 8,
             "responseCode": {
                 "code": 404,
                 "name": "Not Found"
@@ -112,7 +130,7 @@
                 }
             },
             "times": [
-                6
+                8
             ],
             "allTests": [
                 {
@@ -124,7 +142,7 @@
             "id": "9fa25688-fcc9-423c-874a-55fffc128a96",
             "name": "Post task",
             "url": "http://localhost:3000/tasks/",
-            "time": 6,
+            "time": 9,
             "responseCode": {
                 "code": 201,
                 "name": "Created"
@@ -139,7 +157,7 @@
                 }
             },
             "times": [
-                6
+                9
             ],
             "allTests": [
                 {
@@ -151,7 +169,7 @@
             "id": "5abe2bd0-3430-49b2-8417-ba4dfc1bce3c",
             "name": "post without titel",
             "url": "http://localhost:3000/tasks/",
-            "time": 5,
+            "time": 6,
             "responseCode": {
                 "code": 422,
                 "name": "Unprocessable Entity"
@@ -166,7 +184,7 @@
                 }
             },
             "times": [
-                5
+                6
             ],
             "allTests": [
                 {
@@ -178,7 +196,7 @@
             "id": "24bb7bea-8a08-46be-8c10-10467a382fc5",
             "name": "Update Task",
             "url": "http://localhost:3000/tasks/2",
-            "time": 5,
+            "time": 6,
             "responseCode": {
                 "code": 200,
                 "name": "OK"
@@ -193,7 +211,7 @@
                 }
             },
             "times": [
-                5
+                6
             ],
             "allTests": [
                 {
@@ -259,7 +277,7 @@
             "id": "91c108b7-c81a-40b2-b716-83c06d6e3850",
             "name": "Wrong delete Task",
             "url": "http://localhost:3000/tasks/11",
-            "time": 6,
+            "time": 5,
             "responseCode": {
                 "code": 404,
                 "name": "Not Found"
@@ -274,7 +292,7 @@
                 }
             },
             "times": [
-                6
+                5
             ],
             "allTests": [
                 {
@@ -313,7 +331,7 @@
             "id": "4b8c2d22-b913-4790-959c-279d81e028fe",
             "name": "logout",
             "url": "http://localhost:3000/logout",
-            "time": 5,
+            "time": 4,
             "responseCode": {
                 "code": 204,
                 "name": "No Content"
@@ -328,7 +346,7 @@
                 }
             },
             "times": [
-                5
+                4
             ],
             "allTests": [
                 {
@@ -340,7 +358,7 @@
             "id": "87176506-38aa-4ae7-8a14-f2e7e302d467",
             "name": "wrong verify",
             "url": "http://localhost:3000/verify",
-            "time": 8,
+            "time": 5,
             "responseCode": {
                 "code": 401,
                 "name": "Unauthorized"
@@ -355,7 +373,7 @@
                 }
             },
             "times": [
-                8
+                5
             ],
             "allTests": [
                 {
@@ -367,7 +385,7 @@
             "id": "f047afc8-3027-4cc8-8f2e-35cb43207e05",
             "name": "wrong login",
             "url": "http://localhost:3000/login",
-            "time": 5,
+            "time": 6,
             "responseCode": {
                 "code": 401,
                 "name": "Unauthorized"
@@ -382,46 +400,23 @@
                 }
             },
             "times": [
-                5
+                6
             ],
             "allTests": [
                 {
                     "Faslche Email oder Password, code ": true
                 }
             ]
-        },
-        {
-            "id": "441f9104-a0a9-4dc5-859d-814fc2b1ae1e",
-            "name": "wrong logout",
-            "url": "http://localhost:3000/logout",
-            "time": 5,
-            "responseCode": {
-                "code": 204,
-                "name": "No Content"
-            },
-            "tests": {
-                "Server error": false
-            },
-            "testPassFailCounts": {
-                "Server error": {
-                    "pass": 0,
-                    "fail": 1
-                }
-            },
-            "times": [
-                5
-            ],
-            "allTests": [
-                {
-                    "Server error": false
-                }
-            ]
         }
     ],
     "count": 1,
-    "totalTime": 312,
+    "totalTime": 317,
     "collection": {
         "requests": [
+            {
+                "id": "441f9104-a0a9-4dc5-859d-814fc2b1ae1e",
+                "method": "DELETE"
+            },
             {
                 "id": "920caafd-97cc-45e0-8cbb-cc7c25cc6c84",
                 "method": "POST"
@@ -477,10 +472,6 @@
             {
                 "id": "f047afc8-3027-4cc8-8f2e-35cb43207e05",
                 "method": "POST"
-            },
-            {
-                "id": "441f9104-a0a9-4dc5-859d-814fc2b1ae1e",
-                "method": "DELETE"
             }
         ]
     }

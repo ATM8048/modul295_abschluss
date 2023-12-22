@@ -23,10 +23,10 @@
 13. Try und Catch bei allen endpoints geschrieben.
 14. Endpoints weden überprüft, ob ein Bentuzer die Berechtigugen hat.
 15. unbekante Endpoint werden gehandelt.
-16. Tests erstellt
+16. Tests erstellt für alle endpoints
 17. Api Dokumentation mit Hilfe von swagger-ui-express und swagger-autogen
 
-## Ordnerstruktur und Dokumentation:
+## Ordnerstruktur:
 1. Quelcode in src
 2. die Datei server.js ist für Konfigurationen
 3. die Datei task.js ist alles über Tasks.
@@ -35,7 +35,10 @@
 6. die Datei swagger_konfiguration.js ist für swagger-autogen
 7. die Datei swagger.js ist automatisch von swagger generiert.
 8. die Datei abschluss_projekt.postman_test_run.json ist für den Tests
-9. die api Dokumentation befindet sich unter localhost:3000/api-documentation
+
+## Dokumentation
+1. die api Dokumentation befindet sich unter localhost:3000/api-documentation 
+2. die Tests sind unter abschluss_projekt.postman_test_run.json zu finden
 
 
 

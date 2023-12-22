@@ -1,9 +1,10 @@
 /* eslint-disable indent */
 const express = require('express');
-
+// das ist für generiren von Random ids
 const { randomUUID } = require('node:crypto');
 
 const router = express.Router();
+// Das sind die Testdaten.
 let tasks = require('./testdaten');
 
 router.get('/', (request, response) => {
@@ -51,10 +52,10 @@ router.post('/', (request, response) => {
             newBook.id = randomUUID();
 
             if (!newBook.Titel || !newBook.Autor) {
-                return response.status(422).send('Titel and Autor are required!');
+                return response.status(422).json('Titel and Autor are required!');
             }
             tasks = [...tasks, newBook];
-            response.status(201).send(newBook);
+            response.status(201).json(newBook);
         } else {
             response.status(403).json('Keine Berechtigungen für das');
         }
@@ -77,7 +78,8 @@ router.patch('/:id', (request, response) => {
                 keys.forEach((key) => oldTask[key] = request.body[key]);
                 // eslint-disable-next-line no-confusing-arrow
                 tasks = tasks.map((task) => task.id === request.params.id ? oldTask : task);
-                response.send(oldTask);
+                response.status(200);
+                response.json(oldTask);
             } else {
                 response.status(422).json('Der Titel darf nicht leer sein.');
             }

@@ -1,3 +1,15 @@
+commit 92ee093e400d344641e96f90a6dd1d1cb9cad021
+Author: Martin Atanasov <martin.atanasov@lernende.bbw.ch>
+Date:   Fri Dec 22 14:55:00 2023 +0000
+
+    api-documentation and tests done
+
+commit f739fa66dac4f733865a8d757de3dde9757e7cda
+Author: Martin Atanasov <martin.atanasov@lernende.bbw.ch>
+Date:   Fri Dec 22 13:46:27 2023 +0000
+
+    some stuff changed for eslint
+
 commit 3749d3ffe11d10e83327c1911619b15ded3e0107
 Author: Martin Atanasov <martin.atanasov@lernende.bbw.ch>
 Date:   Fri Dec 22 13:08:36 2023 +0000
