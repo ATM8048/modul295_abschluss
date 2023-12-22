@@ -7,6 +7,8 @@ const router = express.Router();
 let tasks = require('./testdaten');
 
 router.get('/', (request, response) => {
+    // #swagger.tags = ['Tasks']
+    // #swagger.description = 'Tasks auflisten'
     try {
         if (request.session.authenticated) {
             response.json(tasks);
@@ -22,6 +24,8 @@ router.get('/', (request, response) => {
 });
 
 router.get('/:id', (request, response) => {
+    // #swagger.tags = ['Tasks']
+    // #swagger.description = 'Task Informationen anzeigen'
     try {
         if (request.session.authenticated) {
             if (tasks.find((task) => task.id === request.params.id)) {
@@ -39,6 +43,8 @@ router.get('/:id', (request, response) => {
 
 // eslint-disable-next-line consistent-return
 router.post('/', (request, response) => {
+    // #swagger.tags = ['Tasks']
+    // #swagger.description = 'ein task erstellen'
     try {
         if (request.session.authenticated) {
             const newBook = request.body;
@@ -58,6 +64,8 @@ router.post('/', (request, response) => {
 });
 
 router.patch('/:id', (request, response) => {
+    // #swagger.tags = ['Tasks']
+    // #swagger.description = 'ein Task bearbeiten'
     try {
         if (request.session.authenticated) {
             const keys = Object.keys(request.body);
@@ -81,6 +89,8 @@ router.patch('/:id', (request, response) => {
     }
 });
 router.delete('/:id', (request, response) => {
+    // #swagger.tags = ['Tasks']
+    // #swagger.description = 'ein task löschen'
     try {
         if (request.session.authenticated) {
             const taskId = request.params.id;

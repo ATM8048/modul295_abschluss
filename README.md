@@ -23,13 +23,19 @@
 13. Try und Catch bei allen endpoints geschrieben.
 14. Endpoints weden überprüft, ob ein Bentuzer die Berechtigugen hat.
 15. unbekante Endpoint werden gehandelt.
+16. Tests erstellt
+17. Api Dokumentation mit Hilfe von swagger-ui-express und swagger-autogen
 
-
-## Ordnerstruktur:
+## Ordnerstruktur und Dokumentation:
 1. Quelcode in src
 2. die Datei server.js ist für Konfigurationen
 3. die Datei task.js ist alles über Tasks.
 4. die Datei authentication.js ist für Login-System.
+5. die Datei testdaten.js ist für die Testdaten, generiert von chatgpt
+6. die Datei swagger_konfiguration.js ist für swagger-autogen
+7. die Datei swagger.js ist automatisch von swagger generiert.
+8. die Datei abschluss_projekt.postman_test_run.json ist für den Tests
+9. die api Dokumentation befindet sich unter localhost:3000/api-documentation
 
 
 
