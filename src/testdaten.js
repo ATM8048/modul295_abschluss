@@ -1,6 +1,6 @@
 // Testdaten mit Hilfe von Chatgpt generiert.
 /* eslint-disable indent */
-const tasks = [
+let tasks = [
     {
         id: '1',
         Titel: 'Entwickeln Sie eine einfache To-Do-Liste',

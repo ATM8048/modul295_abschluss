@@ -1,49 +1,94 @@
 const express = require('express');
 const router = express.Router();
-const tasks = require('./testdaten');
+let tasks = require('./testdaten');
 const { randomUUID } = require('node:crypto');
 
 
 router.get('/', (request, response) => {
-    response.json(tasks);
+
+    try {
+        if (request.session.authenticated) {
+            response.json(tasks);
+        } else {
+            response.sendStatus(403).json("Keine Berechtigungen für das");
+        }
+    } catch (err) {
+        response.sendStatus(500).send(err);
+    };
 });
 
 router.get('/:id', (request, response) => {
-    if (tasks.find((task) => task.id === request.params.id)) {
-        response.send(tasks.find((task) => task.id === request.params.id))
-    } else {
-        response.sendStatus(404);
+    try {
+        if (request.session.authenticated) {
+            if (tasks.find((task) => task.id === request.params.id)) {
+                response.send(tasks.find((task) => task.id === request.params.id))
+            } else {
+                response.sendStatus(404);
+            }
+        } else {
+            response.sendStatus(403).json("Keine Berechtigungen für das");
+        }
+    } catch (err) {
+        response.sendStatus(500).send(err);
     }
+
 });
 
 router.post('/', (request, response) => {
-    const newBook = request.body;
-    newBook['id'] = randomUUID();
+    try {
+        if (request.session.authenticated) {
+            let newBook = request.body;
+            newBook['id'] = randomUUID();
 
-    if (!newBook['Titel'] || !newBook['Autor']) {
-        return response.status(422).send("Titel and Autor are required!");
-    };
+            if (!newBook['Titel'] || !newBook['Autor']) {
+                return response.status(422).send("Titel and Autor are required!");
+            };
 
-    tasks = [...tasks, newBook];
-    response.status(201).send(newBook);
+            tasks = [...tasks, newBook];
+            response.status(201).send(newBook);
+        } else {
+            response.sendStatus(403).json("Keine Berechtigungen für das");
+        }
+    } catch (err) {
+        response.sendStatus(500).send(err);
+    }
+
 });
 
 router.patch('/:id', (request, response) => {
-    const keys = Object.keys(request.body);
-    const oldTask = tasks.find((task) => task.id === request.params.id);
-    keys.forEach((key) => oldTask[key] = request.body[key]);
-    tasks = tasks.map((task) => task.id === request.params.id ? oldTask : task);
-    response.send(oldTask);
+    try {
+        if (request.session.authenticated) {
+            const keys = Object.keys(request.body);
+            const oldTask = tasks.find((task) => task.id === request.params.id);
+            keys.forEach((key) => oldTask[key] = request.body[key]);
+            tasks = tasks.map((task) => task.id === request.params.id ? oldTask : task);
+            response.send(oldTask);
+        } else {
+            response.sendStatus(403).json("Keine Berechtigungen für das");
+        }
+    } catch (err) {
+        response.sendStatus(500).send(err);
+    }
+
 });
 router.delete('/:id', (request, response) => {
-    const taskId = request.params.id;
-    const taskIndex = tasks.findIndex((task) => task.id === taskId);
+    try {
+        if (request.session.authenticated) {
+            const taskId = request.params.id;
+            const taskIndex = tasks.findIndex((task) => task.id === taskId);
 
-    if (taskIndex !== -1) {
-        tasks.splice(taskIndex, 1);
+            if (taskIndex !== -1) {
+                tasks.splice(taskIndex, 1);
 
-        response.status(204).send();
+                response.status(204).send();
+            }
+        } else {
+            response.sendStatus(403).json("Keine Berechtigungen für das");
+        }
+    } catch (err) {
+        response.sendStatus(500).send(err);
     }
+
 });
 
 module.exports = router;
